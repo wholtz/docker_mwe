@@ -19,7 +19,7 @@ jobs:
 
     steps:
     - name: Test installation
-      shell: /usr/local/bin/_dockerfile_shell.sh -l {0}
+      shell: bash -l {0}
       run: |
         micromamba list
         micromamba info
