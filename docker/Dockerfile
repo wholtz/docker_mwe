@@ -16,5 +16,3 @@ ARG MAMBA_DOCKERFILE_ACTIVATE=1
 RUN python -c "import numpy"
 
 RUN micromamba list
-
-ENTRYPOINT ["/usr/local/bin/_entrypoint.sh", "/usr/bin/bash"]
