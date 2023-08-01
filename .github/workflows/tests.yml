@@ -19,8 +19,9 @@ jobs:
 
     steps:
     - name: Test installation
-      shell: bash -l {0}
+      shell: /usr/local/bin/_dockerfile_shell.sh -l {0}
       run: |
-        /usr/local/bin/_dockerfile_shell.sh micromamba list
-        /usr/local/bin/_dockerfile_shell.sh which micromamba
-        /usr/local/bin/_dockerfile_shell.sh python -c "import numpy"
+        micromamba list
+        micromamba info
+        which micromamba
+        python -c "import numpy"
