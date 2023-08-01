@@ -17,4 +17,4 @@ RUN python -c "import numpy"
 
 RUN micromamba list
 
-ENTRYPOINT ["/usr/local/bin/_entrypoint.sh", "/bin/bash"]
+ENTRYPOINT ["/usr/local/bin/_entrypoint.sh", "/usr/bin/bash"]
