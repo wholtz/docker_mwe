@@ -21,3 +21,5 @@ jobs:
     - name: Test installation
       run: |
         micromamba list
+        which micromamba
+        python -c "import numpy"
