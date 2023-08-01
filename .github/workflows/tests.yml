@@ -19,6 +19,7 @@ jobs:
 
     steps:
     - name: Test installation
+      shell: bash -l {0}
       run: |
         micromamba list
         which micromamba
