@@ -9,7 +9,7 @@ jobs:
   my_job:
     runs-on: ubuntu-latest
     container:
-      image: mambauser/micromamba:latest
+      image: mambaorg/micromamba:latest
       options: --user=root
     steps:
     - uses: actions/checkout@master
