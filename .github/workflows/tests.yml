@@ -4,24 +4,15 @@ on:
   push:
   pull_request:
   workflow_dispatch:
-
-env:
-  OMP_NUM_THREADS: 2
     
 jobs:
-  tests:
-    name: Tests
-    runs-on: ubuntu-latest
+  my_job:
     container:
-      image: ghcr.io/sblauth/docker_mwe:main
+      image: mambauser/micromamba:latest
       options: --user=root
     steps:
-    - name: checkout
-      uses: actions/checkout@master
-    - name: Test installation
-      shell: _entrypoint.sh /bin/bash --noprofile --norc -eo pipefail {0}
+    - uses: actions/checkout@master
+    - shell: _entrypoint.sh /bin/bash --noprofile --norc -eo pipefail {0}
       run: |
-        micromamba list
         micromamba info
         which micromamba
-        python -c "import numpy"
