@@ -4,8 +4,6 @@ on:
   push:
   pull_request:
   workflow_dispatch:
-  schedule:
-    - cron: '17 22 * * *'
 
 env:
   OMP_NUM_THREADS: 2
@@ -18,10 +16,11 @@ jobs:
       image: ghcr.io/sblauth/docker_mwe:main
 
     steps:
+    - name: checkout
+      uses: actions/checkout@master
     - name: Test installation
-      shell: bash
+      shell: _entrypoint.sh /bin/bash --noprofile --norc -eo pipefail {0}
       run: |
-        source /usr/local/bin/_entrypoint.sh
         micromamba list
         micromamba info
         which micromamba
