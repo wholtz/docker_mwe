@@ -7,6 +7,7 @@ on:
     
 jobs:
   my_job:
+    runs-on: ubuntu-latest
     container:
       image: mambauser/micromamba:latest
       options: --user=root
